@@ -9,13 +9,14 @@ namespace Resources.Scripts
     {
         public static string Readings = "";
         
-        public static string baseURL = "http://192.168.0.115:8080";
+        public static string baseURL = "http://10.50.123.102:8080";
 
-        public static void PullReadings()
+        public static IEnumerator PullReadings()
         {
             WWW www = new WWW(baseURL);
             while (!www.isDone){}
             Readings = www.text;
+            yield return www;
         }
 
       
