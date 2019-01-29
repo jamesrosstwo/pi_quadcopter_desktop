@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Resources.Scripts;
 using UnityEngine;
 
-public class CanvasController : MonoBehaviour {
-
+public class CanvasController : MonoBehaviour
+{
+	private float refreshCooldown = 0.1f;
+	private float refreshTimer;
 	
-	// Update is called once per frame
-	void Update () {
+	void Start()
+	{
+		refreshTimer = refreshCooldown;
 		StartCoroutine(Quadcopter.PullReadings());
-		Debug.Log(Input.GetAxis("Vertical"));
+	}
+	// Update is called once per frame
+	void Update ()
+	{
+		refreshTimer -= Time.deltaTime;
+		if (refreshTimer <= 0)
+		{
+			StartCoroutine(Quadcopter.PullReadings());
+			refreshTimer = refreshCooldown;
+		}
 	}
 }

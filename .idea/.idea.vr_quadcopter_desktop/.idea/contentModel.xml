@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\james\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_vr_quadcopter_desktop.-1601488715.00" t="ExcludeRecursive" />
+    <e p="C:\Users\james\Desktop\vr_quadcopter_desktop" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_MK" t="Include">
+          <e p="MKGlowFree" t="Include">
+            <e p="Editor" t="Include">
+              <e p="MKGlowFreeEditor.cs" t="Include" />
+            </e>
+            <e p="MKGlowFree.cs" t="Include" />
+            <e p="Shader" t="Include">
+              <e p="Render" t="Include">
+                <e p="MKGlowBlur.shader" t="Include" />
+                <e p="MKGlowBlurInc.cginc" t="Include" />
+                <e p="MKGlowComposite.shader" t="Include" />
+                <e p="MKGlowCompositeInc.cginc" t="Include" />
+                <e p="MKGlowSelectiveRender.shader" t="Include" />
+              </e>
+              <e p="Variants_SelectiveMode" t="Include">
+                <e p="Cutout" t="Include">
+                  <e p="MK_Cutout-Diffuse.shader" t="Include" />
+                  <e p="MK_Cutout-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Cutout-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Cutout-Glossy.shader" t="Include" />
+                </e>
+                <e p="Illumin" t="Include">
+                  <e p="MK_Illumin-Diffuse.shader" t="Include" />
+                  <e p="MK_Illumin-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Illumin-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Illumin-Glossy.shader" t="Include" />
+                </e>
+                <e p="Normal" t="Include">
+                  <e p="MK_Normal-Diffuse.shader" t="Include" />
+                  <e p="MK_Normal-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Normal-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Normal-Glossy.shader" t="Include" />
+                </e>
+                <e p="Other" t="Include">
+                  <e p="MK_Illumin-Diffuse.shader" t="Include" />
+                  <e p="MK_Mobile-Diffuse.shader" t="Include" />
+                  <e p="MK_Unlit-Normal.shader" t="Include" />
+                </e>
+                <e p="Particle" t="Include">
+                  <e p="MK_Particle Add.shader" t="Include" />
+                  <e p="MK_Particle AddMultiply.shader" t="Include" />
+                  <e p="MK_Particle Alpha Blend.shader" t="Include" />
+                  <e p="MK_Particle Multiply.shader" t="Include" />
+                </e>
+                <e p="Sprites" t="Include">
+                  <e p="MK_Sprite-Default.shader" t="Include" />
+                  <e p="MK_Sprite-Diffuse.shader" t="Include" />
+                  <e p="MK_UnitySprites.cginc" t="Include" />
+                </e>
+                <e p="Transparent" t="Include">
+                  <e p="MK_Transparent-Diffuse.shader" t="Include" />
+                  <e p="MK_Transparent-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Transparent-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Transparent-Glossy.shader" t="Include" />
+                </e>
+                <e p="UI" t="Include">
+                  <e p="MK_UI_Default.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CanvasController.cs" t="Include" />
+            <e p="MovementDisplayController.cs" t="Include" />
+            <e p="Quadcopter.cs" t="Include" />
+            <e p="StatusController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Examples &amp; Extras" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="Anton OFL.txt" t="Include" />
+              <e p="Bangers - OFL.txt" t="Include" />
+              <e p="LiberationSans - OFL.txt" t="Include" />
+              <e p="Oswald-Bold - OFL.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="vr_quadcopter_desktop.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
