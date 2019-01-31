@@ -5,21 +5,16 @@ using UnityEngine;
 public class CanvasController : MonoBehaviour
 {
 	private float refreshCooldown = 0.1f;
-	private float refreshTimer;
+	private float _refreshTimer;
 	
 	void Start()
 	{
-		refreshTimer = refreshCooldown;
-		StartCoroutine(Quadcopter.PullReadings());
+		Quadcopter.SetupSocket();
+		_refreshTimer = refreshCooldown;
+		StartCoroutine(Quadcopter.PullReadings(refreshCooldown));
 	}
-	// Update is called once per frame
+	
 	void Update ()
 	{
-		refreshTimer -= Time.deltaTime;
-		if (refreshTimer <= 0)
-		{
-			StartCoroutine(Quadcopter.PullReadings());
-			refreshTimer = refreshCooldown;
-		}
 	}
 }

@@ -1,24 +1,85 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Sockets;
 using UnityEngine;
-using UnityEngine.Networking;
 
 public static class Quadcopter
 {
     public static QuadcopterData Data = new QuadcopterData();
 
-    // ADD ERROR CHECKS
-    public static string baseURL = "http://192.168.0.115:8080";
+    private static TcpClient _socket;
+    public static bool SocketReady = false; // global variables are setup here
+    public static NetworkStream Stream;
+    static StreamWriter _writer;
+    static StreamReader _reader;
+    public static String Host = "localhost";
+    public static Int32 Port = 50000;
 
-    public static IEnumerator PullReadings()
+    public static void SetupSocket()
     {
-        WWW www = new WWW(baseURL);
-
-        while (!www.isDone)
+        try
         {
+            _socket = new TcpClient(Host, Port);
+            Stream = _socket.GetStream();
+            _writer = new StreamWriter(Stream);
+            _reader = new StreamReader(Stream);
+            SocketReady = true;
         }
-        Data = JsonUtility.FromJson<QuadcopterData>(www.text);
-        yield return www;
+        catch (Exception e)
+        {
+            Debug.Log("Socket error:" + e);
+        }
+    }
+
+    public static void WriteSocket(string theLine)
+    {
+        if (!SocketReady)
+            return;
+        String tmpString = theLine;
+        _writer.Write(tmpString);
+        _writer.Flush();
+    }
+
+    public static String ReadSocket()
+    {
+        if (!SocketReady)
+        {
+            Debug.LogError("Tried to read from unavailable socket");
+            return "";
+        }
+        
+        
+        string lines = "";
+        while (_reader.Peek() != 3)
+        {
+            lines += (char)(_reader.Read());
+        }
+        _reader.Read();
+        return lines;
+    }
+
+    public static IEnumerator PullReadings(float cooldown)
+    {
+        while (true)
+        {
+            WriteSocket("readings");
+            string json = ReadSocket();
+            Data = JsonUtility.FromJson<QuadcopterData>(json);
+            Debug.Log(json);
+            yield return new WaitForSeconds(cooldown);
+        }
+    }
+
+    public static void CloseSocket()
+    {
+        if (!SocketReady)
+            return;
+        _writer.Close();
+        _reader.Close();
+        _socket.Close();
+        SocketReady = false;
     }
 }
 
