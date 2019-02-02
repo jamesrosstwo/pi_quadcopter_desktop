@@ -8,13 +8,12 @@ using UnityEngine;
 public static class Quadcopter
 {
     public static QuadcopterData Data = new QuadcopterData();
-
     private static TcpClient _socket;
-    public static bool SocketReady = false; // global variables are setup here
+    public static bool SocketReady = false;
     public static NetworkStream Stream;
     static StreamWriter _writer;
     static StreamReader _reader;
-    public static String Host = "localhost";
+    public static String Host = "10.50.127.81";
     public static Int32 Port = 50000;
 
     public static void SetupSocket()
@@ -49,13 +48,14 @@ public static class Quadcopter
             Debug.LogError("Tried to read from unavailable socket");
             return "";
         }
-        
-        
+
+
         string lines = "";
         while (_reader.Peek() != 3)
         {
-            lines += (char)(_reader.Read());
+            lines += (char) (_reader.Read());
         }
+
         _reader.Read();
         return lines;
     }
@@ -65,7 +65,9 @@ public static class Quadcopter
         while (true)
         {
             WriteSocket("readings");
+            Debug.Log("socket written");
             string json = ReadSocket();
+            Debug.Log("socket read");
             Data = JsonUtility.FromJson<QuadcopterData>(json);
             Debug.Log(json);
             yield return new WaitForSeconds(cooldown);
