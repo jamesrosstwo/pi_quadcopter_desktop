@@ -65,11 +65,8 @@ public static class Quadcopter
         while (true)
         {
             WriteSocket("readings");
-            Debug.Log("socket written");
             string json = ReadSocket();
-            Debug.Log("socket read");
             Data = JsonUtility.FromJson<QuadcopterData>(json);
-            Debug.Log(json);
             yield return new WaitForSeconds(cooldown);
         }
     }
