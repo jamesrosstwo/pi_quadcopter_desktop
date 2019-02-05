@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using UnityEngine;
@@ -13,6 +12,7 @@ public static class Quadcopter
     public static NetworkStream Stream;
     static StreamWriter _writer;
     static StreamReader _reader;
+    public static Vector3 Rotation = Vector3.zero;
     public static String Host = "10.50.127.81";
     public static Int32 Port = 50000;
 
@@ -86,8 +86,9 @@ public class QuadcopterData
 {
     public string status;
     public float altitude;
-    public float xAngle;
-    public float yAngle;
+    public float rotation_x;
+    public float rotation_y;
+    public float rotation_z;
     public float distance;
     public float batteryPercentage;
 }
