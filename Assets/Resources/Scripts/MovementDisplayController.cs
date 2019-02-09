@@ -20,6 +20,10 @@ public class MovementDisplayController : MonoBehaviour
         Vector2 inputDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         float x = Mathf.Lerp(-_radius, _radius, (inputDir.x + 1) / 2);
         float y = Mathf.Lerp(-_radius, _radius, (inputDir.y + 1) / 2);
+        if (x < 0)
+        {
+            Quadcopter.printStuff();
+        }
         _rt.localPosition = Vector3.ClampMagnitude(new Vector3(x, y, 0), _radius * 0.65f);
     }
 }

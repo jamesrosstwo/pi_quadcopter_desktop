@@ -14,7 +14,7 @@ public static class Quadcopter
     static StreamReader _reader;
     public static Vector3 Rotation = Vector3.zero;
     public static String Host = "10.50.127.81";
-    public static Int32 Port = 50000;
+    public static Int32 Port = 50001;
 
     public static void SetupSocket()
     {
@@ -69,6 +69,13 @@ public static class Quadcopter
             Data = JsonUtility.FromJson<QuadcopterData>(json);
             yield return new WaitForSeconds(cooldown);
         }
+    }
+
+    public static void printStuff()
+    {
+        WriteSocket("print('a')");
+        string json = ReadSocket();
+        Debug.Log(json);
     }
 
     public static void CloseSocket()
