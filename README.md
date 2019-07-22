@@ -1,6 +1,6 @@
-# VR Quadcopter Desktop
+# Pi Quadcopter Desktop
 
-Desktop application for the VR Quadcopter
+Desktop application for the [Pi Quadcopter](https://github.com/jamesrosstwo/pi_quadcopter/)
 
 ## Usage
 
