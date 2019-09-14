@@ -1,6 +1,6 @@
-# Pi Quadcopter Desktop
+# Quadcopter Desktop App
 
-Desktop application for the [Pi Quadcopter](https://github.com/jamesrosstwo/pi_quadcopter/)
+Desktop application for the [Quadcopter](https://github.com/jamesrosstwo/quadcopter/)
 
 ## Usage
 
